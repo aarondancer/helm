@@ -78,11 +78,14 @@ of the official `stable` charts.
 ```console
 $ helm repo update              # Make sure we get the latest list of charts
 $ helm install stable/mysql
-Released smiling-penguin
+NAME:   hardy-lamb
+STATUS: DEPLOYED
+...
+
 ```
 
 In the example above, the `stable/mysql` chart was released, and the name of
-our new release is `smiling-penguin`. You get a simple idea of the
+our new release is `hardy-lamb`. You get a simple idea of the
 features of this MySQL chart by running `helm inspect stable/mysql`.
 
 Whenever you install a chart, a new release is created. So one chart can
@@ -99,8 +102,8 @@ It's easy to see what has been released using Helm:
 
 ```console
 $ helm ls
-NAME             VERSION   UPDATED                   STATUS    CHART
-smiling-penguin  1         Wed Sep 28 12:59:46 2016  DEPLOYED  mysql-0.1.0
+NAME            REVISION        UPDATED                         STATUS          CHART           NAMESPACE
+hardy-lamb      1               Wed Jul 11 14:07:02 2018        DEPLOYED        mysql-0.8.2     default
 ```
 
 The `helm list` function will show you a list of all deployed releases.
@@ -110,15 +113,15 @@ The `helm list` function will show you a list of all deployed releases.
 To uninstall a release, use the `helm delete` command:
 
 ```console
-$ helm delete smiling-penguin
-Removed smiling-penguin
+$ helm delete hardy-lamb
+release "hardy-lamb" deleted
 ```
 
-This will uninstall `smiling-penguin` from Kubernetes, but you will
+This will uninstall `hardy-lamb` from Kubernetes, but you will
 still be able to request information about that release:
 
 ```console
-$ helm status smiling-penguin
+$ helm status hardy-lamb
 Status: DELETED
 ...
 ```
